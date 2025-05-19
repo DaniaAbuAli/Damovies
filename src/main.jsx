@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import WatchList from "./pages/WatchList.jsx";
 import MovieDetails from "./pages/MovieDetails.jsx";
@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import App from "./App.jsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
@@ -21,7 +21,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/movie/:movieId",
-    element: <MovieDetails/>,
+    element: <MovieDetails />,
     errorElement: <div>404 Not Found</div>,
   },
 ]);
